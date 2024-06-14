@@ -21,17 +21,29 @@ public class ElectricPokemon extends Pokemon {
 
     void thunderPunch(Pokemon gymPokemon, Pokemon pokemon){
         System.out.println(super.getName() + " used Thunder Punch on " + gymPokemon.getName());
+        gymPokemon.setHp(gymPokemon.getHp() - 55);
+        System.out.println(gymPokemon.getName()+" hp: "+gymPokemon.getHp());
     }
 
     void electroBall(Pokemon gymPokemon, Pokemon pokemon){
         System.out.println(super.getName() + " used Electro Ball on " + gymPokemon.getName());
+        gymPokemon.setHp(gymPokemon.getHp() - 60);
+        System.out.println(gymPokemon.getName()+" hp: "+gymPokemon.getHp());
     }
 
     void thunder(Pokemon gymPokemon, Pokemon pokemon){
         System.out.println(super.getName() + " used Thunder on " + gymPokemon.getName());
+        if (gymPokemon instanceof ElectricPokemon){
+            gymPokemon.setHp(gymPokemon.getHp() +50);
+        } else {
+            gymPokemon.setHp(gymPokemon.getHp() - 100);
+            System.out.println(gymPokemon.getName() + " hp: " + gymPokemon.getHp());
+        }
     }
 
     void voltTackle(Pokemon gymPokemon, Pokemon pokemon){
         System.out.println(super.getName() + " used Volt Tackle on " + gymPokemon.getName());
+        gymPokemon.setHp(gymPokemon.getHp() - 80);
+        System.out.println(gymPokemon.getName()+" hp: "+gymPokemon.getHp());
     }
 }

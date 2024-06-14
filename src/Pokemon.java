@@ -3,7 +3,7 @@ import java.util.List;
 public abstract class Pokemon {
     private final String name;
     private final int level;
-    private final int hp;
+    private int hp;
     private final String food;
     private final String sound;
     private String type;
@@ -26,6 +26,10 @@ public abstract class Pokemon {
 
     public int getHp() {
         return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
     }
 
     public String getFood() {

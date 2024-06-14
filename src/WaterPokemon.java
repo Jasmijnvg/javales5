@@ -21,16 +21,30 @@ public class WaterPokemon extends Pokemon {
 
     void surf(Pokemon gymPokemon, Pokemon pokemon) {
         System.out.println(super.getName() + " used surf on " + gymPokemon.getName());
+        gymPokemon.setHp(gymPokemon.getHp() - 80);
+        System.out.println(gymPokemon.getName()+" hp: "+gymPokemon.getHp());
     }
+
     void hydroPump(Pokemon gymPokemon, Pokemon pokemon){
         System.out.println(super.getName() + " used hydro pump on " + gymPokemon.getName());
+        gymPokemon.setHp(gymPokemon.getHp() - 110);
+        System.out.println(gymPokemon.getName()+" hp: "+gymPokemon.getHp());
     }
 
     void hydroCanon(Pokemon gymPokemon, Pokemon pokemon){
         System.out.println(super.getName() + " used hydro canon on " + gymPokemon.getName());
+        gymPokemon.setHp(gymPokemon.getHp() - 85);
+        System.out.println(gymPokemon.getName()+" hp: "+gymPokemon.getHp());
     }
 
     void rainDance(Pokemon gymPokemon, Pokemon pokemon){
         System.out.println(super.getName() + " used rain dance on " + gymPokemon.getName());
+        if (gymPokemon instanceof ElectricPokemon) {
+            System.out.println("Rain Dance has no effect on " + gymPokemon.getName());
+        } else if(gymPokemon instanceof GrassPokemon) {
+            gymPokemon.setHp(gymPokemon.getHp() + 20);
+        } else {
+        gymPokemon.setHp(gymPokemon.getHp() - 20);
+        System.out.println(gymPokemon.getName()+" hp: "+gymPokemon.getHp());}
     }
 }
